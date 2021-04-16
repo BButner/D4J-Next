@@ -1,0 +1,30 @@
+.hamburger
+  @apply mt-4 mr-4
+
+  .burger-line
+    &:nth-child(1), &:nth-child(3)
+      transform-origin: 0%
+    &:not(:nth-child(3))
+      @apply mb-2
+
+  &:hover
+    @extend .hamburger-active
+
+  &-active
+    .burger-line
+      &:nth-child(1)
+        transform: rotate(45deg)
+        width: 34px
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(3)
+        transform: rotate(-45deg)
+        width: 34px
+
+.burger-line
+  @apply w-8
+  @apply h-1
+  background-color: black
+  margin: 0 auto
+  @apply rounded-full
+  transition: opacity 200ms ease, transform 200ms ease, width 200ms ease, background-color 200ms ease
